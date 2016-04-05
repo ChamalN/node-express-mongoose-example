@@ -1,0 +1,10 @@
+{
+  "name": "node-express-mongoose-example",
+  "version": "0.0.1",
+  "description": "A sample project using express and mongoose",
+  "dependencies": {
+    "express": "*",
+    "mongoose": "*",
+    "body-parser": "*"
+  }
+}
