@@ -7,7 +7,8 @@ var Student = mongoose.model('Student');
 router.get('/', function(req, res) {
   Student.find({}, 'studentId firstName lastName', function(err, students) {
     if(err) {
-      console.log("Could not retrieve students");
+      console.log("Could not retrieve students: " + err);
+      res.json(err);
     } else {
       res.json(students);
     }
@@ -21,6 +22,7 @@ router.post('/', function(req, res) {
   student.save(function(err, student) {
     if(err) {
       console.log("Could not create new student: " + err);
+      res.json(err);
     } else {
       res.json(student);
     }
@@ -31,7 +33,8 @@ router.post('/', function(req, res) {
 router.get('/:studentId', function(req, res) {
   Student.findOne({ studentId: req.params.studentId }, 'studentId firstName lastName', function(err, student) {
     if(err) {
-      console.log("Could not retrieve student");
+      console.log("Could not retrieve student: " + err);
+      res.json(err);
     } else {
       res.json(student);
     }
