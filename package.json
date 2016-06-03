@@ -4,7 +4,6 @@
   "description": "A sample project using express and mongoose",
   "dependencies": {
     "express": "*",
-    "mongoose": "*",
     "body-parser": "*"
   }
 }
